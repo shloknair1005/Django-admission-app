@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><h2>{{ student_record.id }}. {{ student_record.first_name }}
+{{ student_record.last_name }}</h2></li>
+      <li class="list-group-item"><strong>Email: </strong>{{ student_record.email }}</li>
+    <li class="list-group-item"><strong>Phone: </strong>{{ student_record.phone }}</li>
+    <li class="list-group-item"><strong>Address: </strong>{{ student_record.address }}</li>
+    <li class="list-group-item"><strong>State: </strong>{{ student_record.city }}</li>
+    <li class="list-group-item"><strong>City: </strong>{{ student_record.state }}</li>
+    <li class="list-group-item"><strong>Zipcode: </strong>{{ student_record.zipcode }}</li>
+  </ul>
+  <div class="card-footer">
+    {{ student_record.created_at }}
+  </div>
+</div>
+<br>
+<br>
+<a class="btn btn-secondary" href="{% url 'home' %}">Back</a>
+<a class="btn btn-danger" href="{% url 'delete_record' student_record.id %}">Delete</a>
+<a class="btn btn-secondary" href="{% url 'update_record' student_record.id %}">Update Record</a>
+
+
+{% endblock %}
